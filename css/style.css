@@ -38,6 +38,11 @@ body {
   padding-bottom: 10px;
   color: rgb(209, 101, 0);
 }
+.select-title {
+  text-align: center;
+  color: #ff6702;
+  padding: 20px;
+}
 .city-name:hover {
   color: #ff6702;
 }

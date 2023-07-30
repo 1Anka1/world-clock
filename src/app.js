@@ -1,32 +1,28 @@
-function updateTime() {
-  odessaTimeElem.innerHTML = moment().tz("Europe/Kiev").format("LTS");
-  lvivTimeElem.innerHTML = moment().tz("Europe/Kiev").format("LTS");
-  charkowTimeElem.innerHTML = moment().tz("Europe/Kiev").format("LTS");
+let selectCityElement = document.querySelector("#select-city");
+let cityElem = document.querySelector(".city-container");
+let cityTimeElem = document.querySelector(".time");
+selectCityElement.addEventListener("change", showDate);
+
+let timer;
+
+function showDate(event) {
+  let cityTimeZone = event.target.value;
+
+  if (cityTimeZone.length > 0) {
+    let currentDate = moment().tz(cityTimeZone).format("MMM Do YYYY");
+
+    showTime(cityTimeZone);
+
+    cityElem.innerHTML = `<h2 class="city-name">${cityTimeZone}</h2>
+        <div class="date">${currentDate}</div>`;
+  } else {
+    cityElem.innerHTML = `<h2 class="select-title">Please select a city</h2>`;
+  }
 }
-setInterval(updateTime, 1);
 
-//Odessa city
-let odessaCityElem = document.querySelector("#odessa");
-let odessaDateElem = odessaCityElem.querySelector(".date");
-let odessaTimeElem = odessaCityElem.querySelector(".time");
-odessaDateElem.innerHTML = moment().tz("Europe/Kiev").format("MMM Do YYYY");
-
-//lviv city
-
-let lvivCityElem = document.querySelector("#lviv");
-let lvivDateElem = lvivCityElem.querySelector(".date");
-let lvivTimeElem = lvivCityElem.querySelector(".time");
-
-lvivDateElem.innerHTML = moment().tz("Europe/Kiev").format("MMM Do YYYY");
-
-//charkow city
-
-let charkowCityElem = document.querySelector("#charkow");
-let charkowDateElem = charkowCityElem.querySelector(".date");
-let charkowTimeElem = charkowCityElem.querySelector(".time");
-
-charkowDateElem.innerHTML = moment().tz("Europe/Kiev").format("MMM Do YYYY");
-
-let today = moment().format("dddd Do MMMM");
-let todayElement = document.querySelector("#today");
-todayElement.innerHTML = today;
+function showTime(cityTimeZone) {
+  clearInterval(timer);
+  timer = setInterval(() => {
+    cityTimeElem.innerHTML = moment().tz(cityTimeZone).format("LTS");
+  }, 1);
+}
