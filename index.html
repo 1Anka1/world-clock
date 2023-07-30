@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Clock by Anna Kasianenko</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -17,35 +22,37 @@
             <div class="select">
                 <select>
                     <option value="">Select a city</option>
-                    <option value="">Odessa</option>
-                    <option value="">Lviv</option>
-                    <option value="">Charkow</option>
+                    <option value="odessa">Odessa</option>
+                    <option value="lviv">Lviv</option>
+                    <option value="charkow">Charkow</option>
                 </select>
             </div>
         </section>
         <section class="cities">
-            <div class="city">
-                <h2>Odessa</h2>
-                <div class="date">August 15th 2022</div>
-                <div class="time">1:48:15 AM</div>
+            <div class="city" id="odessa">
+                <div>
+                    <h2 class="city-name">Odessa</h2>
+                    <div class="date"></div>
+                </div>
+                <div class="time">1:48:15</div>
             </div>
-            <div class="city">
-                <h2>Lviv</h2>
-                <div class="date">August 15th 2022</div>
-                <div class="time">1:48:15 AM</div>
+            <div class="city" id="lviv">
+                <div>
+                    <h2 class="city-name">Lviv</h2>
+                    <div class="date"></div>
+                </div>
+                <div class="time">1:48:15</div>
             </div>
-            <div class="city">
-                <h2>Charkow</h2>
-                <div class="date">August 15th 2022</div>
-                <div class="time">1:48:15 AM</div>
+            <div class="city" id="charkow">
+                <div>
+                    <h2 class="city-name">Charkow</h2>
+                    <div class="date"></div>
+                </div>
+                <div class="time">1:48:15</div>
             </div>
         </section>
     </div>
-
-    <footer class="footer">
-        This project was coded with ❤️ by Anna Kasianenko</a>
-    </footer>
-    <script src="app.js"></script>
+    <script src="src/app.js"></script>
 </body>
 
 </html>

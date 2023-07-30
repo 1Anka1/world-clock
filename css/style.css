@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  background-image: url(/img/world.jpeg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --city-details: "Itim", cursive;
+}
+/* MAIN */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  border: 1px solid #24043c56;
+  border-radius: 40px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+}
+.city {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+.city-name {
+  font-family: var(--font-family);
+  padding-bottom: 10px;
+  color: rgb(209, 101, 0);
+}
+.city-name:hover {
+  color: #ff6702;
+}
+.date {
+  font-family: var(--city-details);
+}
+.time {
+  font-size: 25px;
+  font-family: var(--font-family);
+}
+select {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 15px;
+}
+.header-title {
+  text-align: center;
+  font-family: sans-serif;
+  margin: 20px;
+}
+.footer {
+  text-align: center;
+}
