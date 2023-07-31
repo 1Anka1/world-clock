@@ -1,3 +1,7 @@
+window.addEventListener("DOMContentLoaded", () => {
+  showDate({ target: { value: "current" } });
+});
+
 let selectCityElement = document.querySelector("#select-city");
 let cityElem = document.querySelector(".city-container");
 let citiesElem = document.querySelector(".cities");
